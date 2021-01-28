@@ -2,9 +2,12 @@
 
 namespace FrankenPeople
 {
+
+
     public class Person
     {
         public int Id { get; set; }
+        public string Gender { get; set; }
         public string Title { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -14,9 +17,12 @@ namespace FrankenPeople
         public string City { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }
+        public string Country { get; set; }
+        public string Locale { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string SSN { get; set; }
         public DateTime DOB { get; set; }
     }
 }
+

@@ -8,7 +8,8 @@ namespace FrankenPeople
     {
         static void Main(string[] args)
         {
-            int numberToGenerate = 10;
+            int numberToGenerate = 1;
+            GetBogus.FakeData.Locale = "en_US";
             var testData = GetBogus.FakeData.Generate(numberToGenerate).ToList();
             Console.WriteLine(JsonConvert.SerializeObject(testData, Formatting.Indented));
         }
@@ -16,3 +17,4 @@ namespace FrankenPeople
 
     }
 }
+ 
