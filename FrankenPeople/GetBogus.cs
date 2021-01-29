@@ -12,9 +12,6 @@ namespace FrankenPeople
 
         private static int userId = 1;
 
-
-
-
         private static Faker<Person> fakeData = new Faker<Person>()
             .RuleFor(p => p.Id, f => userId++)
             .RuleFor(p => p.Gender, f => f.PickRandom<Gender>().ToString())
@@ -33,6 +30,8 @@ namespace FrankenPeople
             .RuleFor(p => p.SSN, f => f.Random.Replace("###-##-####"))
             .RuleFor(p => p.DOB, f => f.Date.Past(18))
         ;
+
+        Faker f = new Faker("en_US");
 
         public static Faker<Person> FakeData => fakeData;
 
