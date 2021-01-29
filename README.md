@@ -1,4 +1,4 @@
-This is a simple test of the NuGet package Bogus - Copyright (c) 2015 Brian Chavez , based on faker.js - Copyright (c) 2014-2015 Matthew Bergman & Marak Squires et al. 
+This is a simple test of the NuGet package Bogus - ( Copyright (c) 2015 Brian Chavez , based on faker.js - Copyright (c) 2014-2015 Matthew Bergman & Marak Squires et al. )
 See https://raw.githubusercontent.com/bchavez/Bogus/master/LICENSE for full list of credits and licensing.
 
 In 2013, working for Cane Bay Partners, I needed lots of fake data to populate a vast amount of user data in a loan management system;so I wrote my own which used vast
