@@ -41,42 +41,50 @@ namespace FrankenPeople
             Console.WriteLine(" *** Hacker *** ") ;
             Console.WriteLine(JsonConvert.SerializeObject(testData7, Formatting.Indented));
 
-            var testData8 = GetAllProperty.FakeInternet.Generate(numberToGenerate).ToList();
+            // TestData8 Images
+            Console.WriteLine(" *** Images *** ");
+
+            var testData9 = GetAllProperty.FakeInternet.Generate(numberToGenerate).ToList();
             Console.WriteLine(" *** Internet *** ");
-            Console.WriteLine(JsonConvert.SerializeObject(testData8, Formatting.Indented));
-
-
-            var testData9 = GetAllProperty.FakeName.Generate(numberToGenerate).ToList();
-            Console.WriteLine(" *** Name *** ");
             Console.WriteLine(JsonConvert.SerializeObject(testData9, Formatting.Indented));
 
 
-            var testData10 = GetAllProperty.FakePhone.Generate(numberToGenerate).ToList();
-            Console.WriteLine(" *** Phone *** ");
+            var testData10 = GetAllProperty.FakeLorem.Generate(numberToGenerate).ToList();
+            Console.WriteLine(" *** Lorem *** ");
             Console.WriteLine(JsonConvert.SerializeObject(testData10, Formatting.Indented));
 
 
-            var testData11 = GetAllProperty.FakeRant.Generate(numberToGenerate).ToList();
-            Console.WriteLine(" *** Rant *** ");
+            var testData11 = GetAllProperty.FakeName.Generate(numberToGenerate).ToList();
+            Console.WriteLine(" *** Name *** ");
             Console.WriteLine(JsonConvert.SerializeObject(testData11, Formatting.Indented));
 
 
-            var testData12 = GetAllProperty.FakeSystem.Generate(numberToGenerate).ToList();
-            Console.WriteLine(" *** System *** ");
+            var testData12 = GetAllProperty.FakePhone.Generate(numberToGenerate).ToList();
+            Console.WriteLine(" *** Phone *** ");
             Console.WriteLine(JsonConvert.SerializeObject(testData12, Formatting.Indented));
 
 
-            var testData13 = GetAllProperty.FakeVehicle.Generate(numberToGenerate).ToList();
-            Console.WriteLine(" *** Vehicle *** ");
+            var testData13 = GetAllProperty.FakeRant.Generate(numberToGenerate).ToList();
+            Console.WriteLine(" *** Rant *** ");
             Console.WriteLine(JsonConvert.SerializeObject(testData13, Formatting.Indented));
+
+
+            var testData14 = GetAllProperty.FakeSystem.Generate(numberToGenerate).ToList();
+            Console.WriteLine(" *** System *** ");
+            Console.WriteLine(JsonConvert.SerializeObject(testData14, Formatting.Indented));
+
+
+            var testData15 = GetAllProperty.FakeVehicle.Generate(numberToGenerate).ToList();
+            Console.WriteLine(" *** Vehicle *** ");
+            Console.WriteLine(JsonConvert.SerializeObject(testData15, Formatting.Indented));
 
 
             /* This section is not useful as, especially those of "Type" require an object to manipulate
              * It is here as a placeholder to remind me that I need to work more closely on each of them
              */
-            var testData14 = GetAllProperty.FakeRandom.Generate(numberToGenerate).ToList();
+            var testData16 = GetAllProperty.FakeRandom.Generate(numberToGenerate).ToList();
             Console.WriteLine(" *** Random *** ");
-            Console.WriteLine(JsonConvert.SerializeObject(testData14, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(testData16, Formatting.Indented));
 
 
 

@@ -149,6 +149,22 @@ namespace FrankenPeople
 
 
         // Need to figure out the parameters tp pass
+        private static readonly Faker<__Lorem> fakeLorem = new Faker<__Lorem>(loc)
+            .RuleFor(p => p.Word, f => f.Lorem.Word())
+            .RuleFor(p => p.Words, f => f.Lorem.Words())
+            .RuleFor(p => p.Letter, f => f.Lorem.Letter())
+            .RuleFor(p => p.Sentence, f => f.Lorem.Sentence())
+            .RuleFor(p => p.Sentences, f => f.Lorem.Sentences())
+            .RuleFor(p => p.Paragraph, f => f.Lorem.Paragraph())
+            .RuleFor(p => p.Paragraphs, f => f.Lorem.Paragraphs())
+            .RuleFor(p => p.Text, f => f.Lorem.Text())
+            .RuleFor(p => p.Lines, f => f.Lorem.Lines())
+            .RuleFor(p => p.Slug, f => f.Lorem.Slug())
+    ;
+        public static Faker<__Lorem> FakeLorem => fakeLorem;
+
+
+        // Need to figure out the parameters tp pass
         private static readonly Faker<__Name> fakeName = new Faker<__Name>(loc)
             .RuleFor(p => p.FirstName, f => f.Name.FirstName())
             .RuleFor(p => p.LastName, f => f.Name.LastName())
