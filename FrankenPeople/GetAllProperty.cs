@@ -146,5 +146,124 @@ namespace FrankenPeople
             .RuleFor(p => p.UrlRootedPath, f => f.Internet.UrlRootedPath())
     ;
         public static Faker<__Internet> FakeInternet => fakeInternet;
+
+
+        // Need to figure out the parameters tp pass
+        private static readonly Faker<__Name> fakeName = new Faker<__Name>(loc)
+            .RuleFor(p => p.FirstName, f => f.Name.FirstName())
+            .RuleFor(p => p.LastName, f => f.Name.LastName())
+            .RuleFor(p => p.FullName, f => f.Name.FullName())
+            .RuleFor(p => p.Prefix, f => f.Name.Prefix())
+            .RuleFor(p => p.Suffix, f => f.Name.Suffix())
+            .RuleFor(p => p.FindName, f => f.Name.FindName())
+            .RuleFor(p => p.JobTitle, f => f.Name.JobTitle())
+            .RuleFor(p => p.JobDescriptor, f => f.Name.JobDescriptor())
+            .RuleFor(p => p.JobArea, f => f.Name.JobArea())
+            .RuleFor(p => p.JobType, f => f.Name.JobType())
+    ;
+        public static Faker<__Name> FakeName => fakeName;
+
+
+        private static readonly Faker<__Phone> fakePhone = new Faker<__Phone>(loc)
+            .RuleFor(p => p.PhoneNumber, f => f.Phone.PhoneNumber())
+            .RuleFor(p => p.PhoneNumberFormat, f => f.Phone.PhoneNumberFormat())
+            ;
+        public static Faker<__Phone> FakePhone => fakePhone;
+
+
+        private static readonly Faker<__Rant> fakeRant = new Faker<__Rant>(loc)
+            .RuleFor(p => p.Review, f => f.Rant.Review())
+            .RuleFor(p => p.Reviews, f => f.Rant.Reviews())
+            ;
+        public static Faker<__Rant> FakeRant => fakeRant;
+
+
+        // Need to figure out the parameters to pass
+        private static readonly Faker<__System> fakeSystem = new Faker<__System>(loc)
+            .RuleFor(p => p.FileName, f => f.System.FileName())
+            .RuleFor(p => p.DirectoryPath, f => f.System.DirectoryPath())
+            .RuleFor(p => p.FilePath, f => f.System.FilePath())
+            .RuleFor(p => p.CommonFileName, f => f.System.CommonFileName())
+            .RuleFor(p => p.MimeType, f => f.System.MimeType())
+            .RuleFor(p => p.CommonFileType, f => f.System.CommonFileType())
+            .RuleFor(p => p.CommonFileExt, f => f.System.CommonFileExt())
+            .RuleFor(p => p.FileType, f => f.System.FileType())
+            .RuleFor(p => p.FileExt, f => f.System.FileExt())
+            .RuleFor(p => p.Semver, f => f.System.Semver())
+            //.RuleFor(p => p.Version, f => f.System.Version())
+            //.RuleFor(p => p.Exception, f => f.System.Exception())
+            .RuleFor(p => p.AndroidId, f => f.System.AndroidId())
+            .RuleFor(p => p.ApplePushToken, f => f.System.ApplePushToken())
+            .RuleFor(p => p.ApplePushToken, f => f.System.ApplePushToken())
+;
+        public static Faker<__System> FakeSystem => fakeSystem;
+
+
+        private static readonly Faker<__Vehicle> fakeVehicle = new Faker<__Vehicle>(loc)
+            .RuleFor(p => p.Vin, f => f.Vehicle.Vin())
+            .RuleFor(p => p.Manufacturer, f => f.Vehicle.Manufacturer())
+            .RuleFor(p => p.Model, f => f.Vehicle.Model())
+            .RuleFor(p => p.Type, f => f.Vehicle.Type())
+            .RuleFor(p => p.Fuel, f => f.Vehicle.Fuel())
+        ;
+        public static Faker<__Vehicle> FakeVehicle => fakeVehicle;
+
+
+
+
+        /* This section is not useful as, especially those of "Type" require an object to manipulate
+         * It is here as a placeholder to remind me that I need to work more closely on each of them
+         */
+        private static readonly Faker<__Random> fakeRandom = new Faker<__Random>(loc)
+            //.RuleFor(p => p.Number, f => f.Random.Number())
+            //.RuleFor(p => p.Digits, f => f.Random.Digits())
+            //.RuleFor(p => p.Even, f => f.Random.Even())
+            //.RuleFor(p => p.Odd, f => f.Random.Odd())
+            //.RuleFor(p => p.Double, f => f.Random.Double())
+            //.RuleFor(p => p.Decimal, f => f.Random.Decimal())
+            //.RuleFor(p => p.Float, f => f.Random.Float())
+            //.RuleFor(p => p.Byte, f => f.Random.Byte())
+            //.RuleFor(p => p.Bytes, f => f.Random.Bytes())
+            //.RuleFor(p => p.SByte, f => f.Random.SByte())
+            //.RuleFor(p => p.Int, f => f.Random.Int())
+            //.RuleFor(p => p.UInt, f => f.Random.UInt())
+            //.RuleFor(p => p.ULong, f => f.Random.ULong())
+            //.RuleFor(p => p.Long, f => f.Random.Long())
+            //.RuleFor(p => p.Short, f => f.Random.Short())
+            //.RuleFor(p => p.UShort, f => f.Random.UShort())
+            //.RuleFor(p => p.Char, f => f.Random.Char())
+            //.RuleFor(p => p.Chars, f => f.Random.Chars())
+            //.RuleFor(p => p.String, f => f.Random.String())
+            //.RuleFor(p => p.String2, f => f.Random.String2())
+            .RuleFor(p => p.Hash, f => f.Random.Hash())
+            //.RuleFor(p => p.Bool, f => f.Random.Bool())
+            //.RuleFor(p => p.ArrayElementType, f => f.Random.ArrayElementType())
+            //.RuleFor(p => p.ArrayElement, f => f.Random.ArrayElement())
+            //.RuleFor(p => p.ArrayElementsType, f => f.Random.ArrayElementsType())
+            //.RuleFor(p => p.ListItemType, f => f.Random.ListItemType())
+            //.RuleFor(p => p.ListItemsType, f => f.Random.ListItemsType())
+            //.RuleFor(p => p.CollectionItemType, f => f.Random.CollectionItemType())
+            //.RuleFor(p => p.ReplaceNumbers, f => f.Random.ReplaceNumbers())
+            //.RuleFor(p => p.ReplaceSymbols, f => f.Random.ReplaceSymbols())
+            //.RuleFor(p => p.Replace, f => f.Random.Replace())
+            //.RuleFor(p => p.ClampString, f => f.Random.ClampString())
+            //.RuleFor(p => p.EnumType, f => f.Random.EnumType())
+            //.RuleFor(p => p.ShuffleType, f => f.Random.ShuffleType())
+            .RuleFor(p => p.Word, f => f.Random.Word())
+            .RuleFor(p => p.Words, f => f.Random.Words())
+            //.RuleFor(p => p.WordsArray, f => f.Random.WordsArray())
+            //.RuleFor(p => p.Guid, f => f.Random.Guid())
+            //.RuleFor(p => p.Uuid, f => f.Random.Uuid())
+            .RuleFor(p => p.RandomLocale, f => f.Random.RandomLocale())
+            //.RuleFor(p => p.AlphaNumeric, f => f.Random.AlphaNumeric())
+            .RuleFor(p => p.Hexadecimal, f => f.Random.Hexadecimal())
+            //.RuleFor(p => p.WeightedRandomType, f => f.Random.WeightedRandomType())
+            ;
+            public static Faker<__Random> FakeRandom => fakeRandom;
+
+
+
+
+
     }
 }
