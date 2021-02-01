@@ -8,17 +8,17 @@ namespace FrankenPeople
 {
     class __Date
     {
-        public string Past { get; set; }
-        public string PastOffset { get; set; }
-        public string Soon { get; set; }
-        public string SoonOffset { get; set; }
-        public string Future { get; set; }
-        public string FutureOffset { get; set; }
-        public string Between { get; set; }
-        public string BetweenOffset { get; set; }
-        public string Recent { get; set; }
-        public string RecentOffset { get; set; }
-        public string Timespan { get; set; }
+        public DateTime Past { get; set; }
+        public DateTimeOffset PastOffset { get; set; }
+        public DateTime Soon { get; set; }
+        public DateTimeOffset SoonOffset { get; set; }
+        public DateTime Future { get; set; }
+        public DateTimeOffset FutureOffset { get; set; }
+        public DateTime Between { get; set; }
+        public DateTimeOffset BetweenOffset { get; set; }
+        public DateTime Recent { get; set; }
+        public DateTimeOffset RecentOffset { get; set; }
+        public TimeSpan Timespan { get; set; }
         public string Month { get; set; }
         public string Weekday { get; set; }
     }

@@ -10,7 +10,7 @@ namespace FrankenPeople
     {
         public string Account { get; set; }
         public string AccountName { get; set; }
-        public string Amount { get; set; }
+        public decimal Amount { get; set; }
         public string TransactionType { get; set; }
         public string Currency { get; set; }
         public string CreditCardNumber { get; set; }

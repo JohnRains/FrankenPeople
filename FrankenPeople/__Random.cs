@@ -8,28 +8,28 @@ namespace FrankenPeople
 {
     class __Random
     {
-        public string Number { get; set; }
-        public string Digits { get; set; }
-        public string Even { get; set; }
-        public string Odd { get; set; }
-        public string Double { get; set; }
-        public string Decimal { get; set; }
-        public string Float { get; set; }
-        public string Byte { get; set; }
-        public string Bytes { get; set; }
-        public string SByte { get; set; }
-        public string Int { get; set; }
-        public string UInt { get; set; }
-        public string ULong { get; set; }
-        public string Long { get; set; }
-        public string Short { get; set; }
-        public string UShort { get; set; }
-        public string Char { get; set; }
-        public string Chars { get; set; }
+        public int Number { get; set; }
+        public int[] Digits { get; set; }
+        public int Even { get; set; }
+        public int Odd { get; set; }
+        public double Double { get; set; }
+        public decimal Decimal { get; set; }
+        public float Float { get; set; }
+        public byte Byte { get; set; }
+        public byte[] Bytes { get; set; }
+        public sbyte SByte { get; set; }
+        public int Int { get; set; }
+        public uint UInt { get; set; }
+        public ulong ULong { get; set; }
+        public long Long { get; set; }
+        public short Short { get; set; }
+        public ushort UShort { get; set; }
+        public char Char { get; set; }
+        public char[] Chars { get; set; }
         public string String { get; set; }
         public string String2 { get; set; }
         public string Hash { get; set; }
-        public string Bool { get; set; }
+        public bool Bool { get; set; }
         public string ArrayElementType { get; set; }
         public string ArrayElement { get; set; }
         public string ArrayElementsType { get; set; }
@@ -45,8 +45,8 @@ namespace FrankenPeople
         public string Word { get; set; }
         public string Words { get; set; }
         public string[] WordsArray { get; set; }
-        public string Guid { get; set; }
-        public string Uuid { get; set; }
+        public Guid Guid { get; set; }
+        public Guid Uuid { get; set; }
         public string RandomLocale { get; set; }
         public string AlphaNumeric { get; set; }
         public string Hexadecimal { get; set; }

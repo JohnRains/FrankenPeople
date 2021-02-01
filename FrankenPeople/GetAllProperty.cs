@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FrankenPeople
 {
     class GetAllProperty
@@ -72,19 +73,18 @@ namespace FrankenPeople
         public static Faker<__Database> FakeDatabase => fakeDatabase;
 
 
-        // Need to figure out the parameters tp pass
-        private static readonly Faker<__Date> fakeDate = new Faker<__Date>(loc)
-            //.RuleFor(p => p.Past, f => f.Date.Past(5, dt => DateTime.Now()))
-            //.RuleFor(p => p.PastOffset, f => f.Date.PastOffset())
-            //.RuleFor(p => p.Soon, f => f.Date.Soon())
-            //.RuleFor(p => p.SoonOffset, f => f.Date.SoonOffset())
-            //.RuleFor(p => p.Future, f => f.Date.Future())
-            //.RuleFor(p => p.FutureOffset, f => f.Date.FutureOffset())
-            //.RuleFor(p => p.Between, f => f.Date.Between())
-            //.RuleFor(p => p.BetweenOffset, f => f.Date.BetweenOffset())
-            //.RuleFor(p => p.Recent, f => f.Date.Recent())
-            //.RuleFor(p => p.RecentOffset, f => f.Date.RecentOffset())
-            //.RuleFor(p => p.Timespan, f => f.Date.Timespan())
+        private static readonly Faker<__Date> fakeDate = new Faker<__Date>()
+            .RuleFor(p => p.Past, f => f.Date.Past())
+            .RuleFor(p => p.PastOffset, f => f.Date.PastOffset())
+            .RuleFor(p => p.Soon, f => f.Date.Soon())
+            .RuleFor(p => p.SoonOffset, f => f.Date.SoonOffset())
+            .RuleFor(p => p.Future, f => f.Date.Future())
+            .RuleFor(p => p.FutureOffset, f => f.Date.FutureOffset())
+            .RuleFor(p => p.Between, f => f.Date.Between(DateTime.Now, DateTime.Now.AddDays(5)))
+            .RuleFor(p => p.BetweenOffset, f => f.Date.BetweenOffset(DateTimeOffset.Now, DateTimeOffset.Now.AddDays(5)))
+            .RuleFor(p => p.Recent, f => f.Date.Recent())
+            .RuleFor(p => p.RecentOffset, f => f.Date.RecentOffset())
+            .RuleFor(p => p.Timespan, f => f.Date.Timespan())
             .RuleFor(p => p.Month, f => f.Date.Month())
             .RuleFor(p => p.Weekday, f => f.Date.Weekday())
             ;
@@ -95,9 +95,9 @@ namespace FrankenPeople
         private static readonly Faker<__Finance> fakeFinance = new Faker<__Finance>(loc)
             .RuleFor(p => p.Account, f => f.Finance.Account())
             .RuleFor(p => p.AccountName, f => f.Finance.AccountName())
-            //.RuleFor(p => p.Amount, f => f.Finance.Amount())
+            .RuleFor(p => p.Amount, f => f.Finance.Amount())
             .RuleFor(p => p.TransactionType, f => f.Finance.TransactionType())
-            //.RuleFor(p => p.Currency, f => f.Finance.Currency())
+            .RuleFor(p => p.Currency, f => f.Finance.Currency().Description)
             .RuleFor(p => p.CreditCardNumber, f => f.Finance.CreditCardNumber())
             .RuleFor(p => p.CreditCardCvv, f => f.Finance.CreditCardCvv())
             .RuleFor(p => p.BitcoinAddress, f => f.Finance.BitcoinAddress())
@@ -108,7 +108,6 @@ namespace FrankenPeople
         public static Faker<__Finance> FakeFinance => fakeFinance;
 
 
-        // Need to figure out the parameters tp pass
         private static readonly Faker<__Hacker> fakeHacker = new Faker<__Hacker>(loc)
             .RuleFor(p => p.Abbreviation, f => f.Hacker.Abbreviation())
             .RuleFor(p => p.Adjective, f => f.Hacker.Adjective())
@@ -120,7 +119,6 @@ namespace FrankenPeople
         public static Faker<__Hacker> FakeHacker => fakeHacker;
 
 
-        // Need to figure out the parameters tp pass
         private static readonly Faker<__Internet> fakeInternet = new Faker<__Internet>(loc)
             .RuleFor(p => p.Avatar, f => f.Internet.Avatar())
             .RuleFor(p => p.Email, f => f.Internet.Email())
@@ -131,11 +129,11 @@ namespace FrankenPeople
             .RuleFor(p => p.DomainWord, f => f.Internet.DomainWord())
             .RuleFor(p => p.DomainSuffix, f => f.Internet.DomainSuffix())
             .RuleFor(p => p.Ip, f => f.Internet.Ip())
-            //.RuleFor(p => p.IpAddress, f => f.Internet.IpAddress())
-            //.RuleFor(p => p.IpEndPoint, f => f.Internet.IpEndPoint())
+            .RuleFor(p => p.IpAddress, f => f.Internet.IpAddress().ToString())
+            .RuleFor(p => p.IpEndPoint, f => f.Internet.IpEndPoint().ToString())
             .RuleFor(p => p.Ipv6, f => f.Internet.Ipv6())
-            //.RuleFor(p => p.Ipv6Address, f => f.Internet.Ipv6Address())
-            //.RuleFor(p => p.Ipv6EndPoint, f => f.Internet.Ipv6EndPoint())
+            .RuleFor(p => p.Ipv6Address, f => f.Internet.Ipv6Address().ToString())
+            .RuleFor(p => p.Ipv6EndPoint, f => f.Internet.Ipv6EndPoint().ToString())
             .RuleFor(p => p.UserAgent, f => f.Internet.UserAgent())
             .RuleFor(p => p.Mac, f => f.Internet.Mac())
             .RuleFor(p => p.Password, f => f.Internet.Password())
@@ -148,7 +146,6 @@ namespace FrankenPeople
         public static Faker<__Internet> FakeInternet => fakeInternet;
 
 
-        // Need to figure out the parameters tp pass
         private static readonly Faker<__Lorem> fakeLorem = new Faker<__Lorem>(loc)
             .RuleFor(p => p.Word, f => f.Lorem.Word())
             .RuleFor(p => p.Words, f => f.Lorem.Words())
@@ -164,7 +161,6 @@ namespace FrankenPeople
         public static Faker<__Lorem> FakeLorem => fakeLorem;
 
 
-        // Need to figure out the parameters tp pass
         private static readonly Faker<__Name> fakeName = new Faker<__Name>(loc)
             .RuleFor(p => p.FirstName, f => f.Name.FirstName())
             .RuleFor(p => p.LastName, f => f.Name.LastName())
@@ -194,7 +190,6 @@ namespace FrankenPeople
         public static Faker<__Rant> FakeRant => fakeRant;
 
 
-        // Need to figure out the parameters to pass
         private static readonly Faker<__System> fakeSystem = new Faker<__System>(loc)
             .RuleFor(p => p.FileName, f => f.System.FileName())
             .RuleFor(p => p.DirectoryPath, f => f.System.DirectoryPath())
@@ -206,8 +201,8 @@ namespace FrankenPeople
             .RuleFor(p => p.FileType, f => f.System.FileType())
             .RuleFor(p => p.FileExt, f => f.System.FileExt())
             .RuleFor(p => p.Semver, f => f.System.Semver())
-            //.RuleFor(p => p.Version, f => f.System.Version())
-            //.RuleFor(p => p.Exception, f => f.System.Exception())
+            .RuleFor(p => p.Version, f => f.System.Version().ToString())
+            .RuleFor(p => p.Exception, f => f.System.Exception().ToString())
             .RuleFor(p => p.AndroidId, f => f.System.AndroidId())
             .RuleFor(p => p.ApplePushToken, f => f.System.ApplePushToken())
             .RuleFor(p => p.ApplePushToken, f => f.System.ApplePushToken())
@@ -227,55 +222,55 @@ namespace FrankenPeople
 
 
 
-        /* This section is not useful as, especially those of "Type" require an object to manipulate
-         * It is here as a placeholder to remind me that I need to work more closely on each of them
+        /* 
+         * Need to figure out how to use the "type" elements
          */
         private static readonly Faker<__Random> fakeRandom = new Faker<__Random>(loc)
-            //.RuleFor(p => p.Number, f => f.Random.Number())
-            //.RuleFor(p => p.Digits, f => f.Random.Digits())
-            //.RuleFor(p => p.Even, f => f.Random.Even())
-            //.RuleFor(p => p.Odd, f => f.Random.Odd())
-            //.RuleFor(p => p.Double, f => f.Random.Double())
-            //.RuleFor(p => p.Decimal, f => f.Random.Decimal())
-            //.RuleFor(p => p.Float, f => f.Random.Float())
-            //.RuleFor(p => p.Byte, f => f.Random.Byte())
-            //.RuleFor(p => p.Bytes, f => f.Random.Bytes())
-            //.RuleFor(p => p.SByte, f => f.Random.SByte())
-            //.RuleFor(p => p.Int, f => f.Random.Int())
-            //.RuleFor(p => p.UInt, f => f.Random.UInt())
-            //.RuleFor(p => p.ULong, f => f.Random.ULong())
-            //.RuleFor(p => p.Long, f => f.Random.Long())
-            //.RuleFor(p => p.Short, f => f.Random.Short())
-            //.RuleFor(p => p.UShort, f => f.Random.UShort())
-            //.RuleFor(p => p.Char, f => f.Random.Char())
-            //.RuleFor(p => p.Chars, f => f.Random.Chars())
-            //.RuleFor(p => p.String, f => f.Random.String())
-            //.RuleFor(p => p.String2, f => f.Random.String2())
+            .RuleFor(p => p.Number, f => f.Random.Number(1, 10))
+            .RuleFor(p => p.Digits, f => f.Random.Digits(3, 7, 9))
+            .RuleFor(p => p.Even, f => f.Random.Even())
+            .RuleFor(p => p.Odd, f => f.Random.Odd())
+            .RuleFor(p => p.Double, f => f.Random.Double())
+            .RuleFor(p => p.Decimal, f => f.Random.Decimal())
+            .RuleFor(p => p.Float, f => f.Random.Float())
+            .RuleFor(p => p.Byte, f => f.Random.Byte())
+            .RuleFor(p => p.Bytes, f => f.Random.Bytes(5))
+            .RuleFor(p => p.SByte, f => f.Random.SByte())
+            .RuleFor(p => p.Int, f => f.Random.Int())
+            .RuleFor(p => p.UInt, f => f.Random.UInt())
+            .RuleFor(p => p.ULong, f => f.Random.ULong())
+            .RuleFor(p => p.Long, f => f.Random.Long())
+            .RuleFor(p => p.Short, f => f.Random.Short())
+            .RuleFor(p => p.UShort, f => f.Random.UShort())
+            .RuleFor(p => p.Char, f => f.Random.Char())
+            .RuleFor(p => p.Chars, f => f.Random.Chars('d', 'g'))
+            .RuleFor(p => p.String, f => f.Random.String())
+            .RuleFor(p => p.String2, f => f.Random.String2(5))
             .RuleFor(p => p.Hash, f => f.Random.Hash())
-            //.RuleFor(p => p.Bool, f => f.Random.Bool())
-            //.RuleFor(p => p.ArrayElementType, f => f.Random.ArrayElementType())
+            .RuleFor(p => p.Bool, f => f.Random.Bool())
+            //.RuleFor(p => p.ArrayElementType, f => f.Random.ArrayElement<T>())
             //.RuleFor(p => p.ArrayElement, f => f.Random.ArrayElement())
             //.RuleFor(p => p.ArrayElementsType, f => f.Random.ArrayElementsType())
             //.RuleFor(p => p.ListItemType, f => f.Random.ListItemType())
             //.RuleFor(p => p.ListItemsType, f => f.Random.ListItemsType())
             //.RuleFor(p => p.CollectionItemType, f => f.Random.CollectionItemType())
-            //.RuleFor(p => p.ReplaceNumbers, f => f.Random.ReplaceNumbers())
-            //.RuleFor(p => p.ReplaceSymbols, f => f.Random.ReplaceSymbols())
-            //.RuleFor(p => p.Replace, f => f.Random.Replace())
-            //.RuleFor(p => p.ClampString, f => f.Random.ClampString())
+            .RuleFor(p => p.ReplaceNumbers, f => f.Random.ReplaceNumbers("###", '#'))
+            //.RuleFor(p => p.ReplaceSymbols, f => f.Random.ReplaceSymbols("###", '$', _ => ))
+            .RuleFor(p => p.Replace, f => f.Random.Replace("###"))
+            .RuleFor(p => p.ClampString, f => f.Random.ClampString("abcdefg", 1, 5))
             //.RuleFor(p => p.EnumType, f => f.Random.EnumType())
             //.RuleFor(p => p.ShuffleType, f => f.Random.ShuffleType())
             .RuleFor(p => p.Word, f => f.Random.Word())
             .RuleFor(p => p.Words, f => f.Random.Words())
-            //.RuleFor(p => p.WordsArray, f => f.Random.WordsArray())
-            //.RuleFor(p => p.Guid, f => f.Random.Guid())
-            //.RuleFor(p => p.Uuid, f => f.Random.Uuid())
+            .RuleFor(p => p.WordsArray, f => f.Random.WordsArray(5))
+            .RuleFor(p => p.Guid, f => f.Random.Guid())
+            .RuleFor(p => p.Uuid, f => f.Random.Uuid())
             .RuleFor(p => p.RandomLocale, f => f.Random.RandomLocale())
-            //.RuleFor(p => p.AlphaNumeric, f => f.Random.AlphaNumeric())
+            .RuleFor(p => p.AlphaNumeric, f => f.Random.AlphaNumeric(10))
             .RuleFor(p => p.Hexadecimal, f => f.Random.Hexadecimal())
             //.RuleFor(p => p.WeightedRandomType, f => f.Random.WeightedRandomType())
             ;
-            public static Faker<__Random> FakeRandom => fakeRandom;
+        public static Faker<__Random> FakeRandom => fakeRandom;
 
 
 
