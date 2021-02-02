@@ -30,18 +30,17 @@ namespace FrankenPeople
         public string String2 { get; set; }
         public string Hash { get; set; }
         public bool Bool { get; set; }
-        public string ArrayElementType { get; set; }
-        public char ArrayElement { get; set; } // this one
-        public string ArrayElementsType { get; set; }
-        public string ListItemType { get; set; }
-        public string ListItemsType { get; set; }
-        public string CollectionItemType { get; set; }
+        public string ArrayElement { get; set; } 
+        public string[] ArrayElements { get; set; }
+        public string ListItem { get; set; }
+        public string[] ListItems { get; set; }
+        public string CollectionItem { get; set; }
         public string ReplaceNumbers { get; set; }
         public string ReplaceSymbols { get; set; }
         public string Replace { get; set; }
         public string ClampString { get; set; }
         public string EnumType { get; set; }
-        public string ShuffleType { get; set; }
+        public List<string> Shuffled { get; set; }
         public string Word { get; set; }
         public string Words { get; set; }
         public string[] WordsArray { get; set; }

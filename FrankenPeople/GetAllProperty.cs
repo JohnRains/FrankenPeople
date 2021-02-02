@@ -225,10 +225,10 @@ namespace FrankenPeople
         /* 
          * Need to figure out how to use the "type" elements
          */
+        static private List<string> testObject = new List<string>(
+            new string[] { "On", "the", "other", "hand", "we", "denounce", "with", "righteous", "indignation", "and", "dislike", "men", "who", "are", "so", "beguiled" });
 
-        static private int[] testArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-        private static readonly Faker<__Random> fakeRandom = new Faker<__Random>()
+        public static Faker<__Random> FakeRandom { get; } = new Faker<__Random>()
             .RuleFor(p => p.Number, f => f.Random.Number(1, 10))
             .RuleFor(p => p.Digits, f => f.Random.Digits(3, 7, 9))
             .RuleFor(p => p.Even, f => f.Random.Even())
@@ -251,9 +251,8 @@ namespace FrankenPeople
             .RuleFor(p => p.String2, f => f.Random.String2(5))
             .RuleFor(p => p.Hash, f => f.Random.Hash())
             .RuleFor(p => p.Bool, f => f.Random.Bool())
-            //.RuleFor(p => p.ArrayElementType, f => f.Random.ArrayElement<T>())
-            //.RuleFor(p => p.ArrayElement, f => f.Random.ArrayElement(testArray)) // this one
-            //.RuleFor(p => p.ArrayElementsType, f => f.Random.ArrayElementsType())
+            //.RuleFor(p => p.ArrayElement, f => f.Random.ArrayElement(testArray)) 
+            //.RuleFor(p => p.ArrayElements, f => f.Random.ArrayElementsType())
             //.RuleFor(p => p.ListItemType, f => f.Random.ListItemType())
             //.RuleFor(p => p.ListItemsType, f => f.Random.ListItemsType())
             //.RuleFor(p => p.CollectionItemType, f => f.Random.CollectionItemType())
@@ -262,7 +261,7 @@ namespace FrankenPeople
             .RuleFor(p => p.Replace, f => f.Random.Replace("###"))
             .RuleFor(p => p.ClampString, f => f.Random.ClampString("abcdefg", 1, 5))
             //.RuleFor(p => p.EnumType, f => f.Random.EnumType())
-            //.RuleFor(p => p.ShuffleType, f => f.Random.ShuffleType())
+            //.RuleFor(p => p.Shuffled, f => f.Random.Shuffle(testObject).Take(16).ToArray()
             .RuleFor(p => p.Word, f => f.Random.Word())
             .RuleFor(p => p.Words, f => f.Random.Words())
             .RuleFor(p => p.WordsArray, f => f.Random.WordsArray(5))
@@ -271,9 +270,7 @@ namespace FrankenPeople
             .RuleFor(p => p.RandomLocale, f => f.Random.RandomLocale())
             .RuleFor(p => p.AlphaNumeric, f => f.Random.AlphaNumeric(10))
             .RuleFor(p => p.Hexadecimal, f => f.Random.Hexadecimal())
-            //.RuleFor(p => p.WeightedRandomType, f => f.Random.WeightedRandomType())
-            ;
-        public static Faker<__Random> FakeRandom => fakeRandom;
+;
 
 
 

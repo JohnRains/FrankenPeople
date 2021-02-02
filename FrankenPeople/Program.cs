@@ -42,7 +42,8 @@ namespace FrankenPeople
             Console.WriteLine(JsonConvert.SerializeObject(testData7, Formatting.Indented));
 
             // TestData8 Images
-            Console.WriteLine(" *** Images *** ");
+            Console.WriteLine(" *** Images -- Not Implemented Here *** ");
+            Console.WriteLine();
 
             var testData9 = GetAllProperty.FakeInternet.Generate(numberToGenerate).ToList();
             Console.WriteLine(" *** Internet *** ");
@@ -79,16 +80,14 @@ namespace FrankenPeople
             Console.WriteLine(JsonConvert.SerializeObject(testData15, Formatting.Indented));
 
 
-            /* This section is not useful as, especially those of "Type" require an object to manipulate
-             * It is here as a placeholder to remind me that I need to work more closely on each of them
-             */
             var testData16 = GetAllProperty.FakeRandom.Generate(numberToGenerate).ToList();
             Console.WriteLine(" *** Random *** ");
             Console.WriteLine(JsonConvert.SerializeObject(testData16, Formatting.Indented));
 
+            var sandBox = new SandBox();
+            sandBox.Init();
 
 
-            
         }
 
 
