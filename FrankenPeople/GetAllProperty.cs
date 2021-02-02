@@ -37,7 +37,7 @@ namespace FrankenPeople
             .RuleFor(p => p.OrdinalDirection, f => f.Address.OrdinalDirection())
             ;
         public static Faker<__Address> FakeAddress => fakeAddress;
-        
+
 
         private static readonly Faker<__Commerce> fakeCommerce = new Faker<__Commerce>(loc)
             .RuleFor(p => p.Department, f => f.Commerce.Department())
@@ -225,7 +225,10 @@ namespace FrankenPeople
         /* 
          * Need to figure out how to use the "type" elements
          */
-        private static readonly Faker<__Random> fakeRandom = new Faker<__Random>(loc)
+
+        static private int[] testArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+        private static readonly Faker<__Random> fakeRandom = new Faker<__Random>()
             .RuleFor(p => p.Number, f => f.Random.Number(1, 10))
             .RuleFor(p => p.Digits, f => f.Random.Digits(3, 7, 9))
             .RuleFor(p => p.Even, f => f.Random.Even())
@@ -249,7 +252,7 @@ namespace FrankenPeople
             .RuleFor(p => p.Hash, f => f.Random.Hash())
             .RuleFor(p => p.Bool, f => f.Random.Bool())
             //.RuleFor(p => p.ArrayElementType, f => f.Random.ArrayElement<T>())
-            //.RuleFor(p => p.ArrayElement, f => f.Random.ArrayElement())
+            //.RuleFor(p => p.ArrayElement, f => f.Random.ArrayElement(testArray)) // this one
             //.RuleFor(p => p.ArrayElementsType, f => f.Random.ArrayElementsType())
             //.RuleFor(p => p.ListItemType, f => f.Random.ListItemType())
             //.RuleFor(p => p.ListItemsType, f => f.Random.ListItemsType())

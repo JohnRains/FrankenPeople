@@ -31,7 +31,7 @@ namespace FrankenPeople
         public string Hash { get; set; }
         public bool Bool { get; set; }
         public string ArrayElementType { get; set; }
-        public string ArrayElement { get; set; }
+        public char ArrayElement { get; set; } // this one
         public string ArrayElementsType { get; set; }
         public string ListItemType { get; set; }
         public string ListItemsType { get; set; }
