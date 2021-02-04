@@ -2,7 +2,8 @@
 
 namespace FrankenPeople
 {
-    public class GetBogus
+    // Generate a FrankenPerson
+    public class GenerateFranken
     {
         public enum Gender
         {
@@ -12,7 +13,7 @@ namespace FrankenPeople
 
         private static int userId = 1;
 
-        private static Faker<Person> fakeData = new Faker<Person>("en_US")
+        private static Faker<__Person> fakeData = new Faker<__Person>("en_US")
             .RuleFor(p => p.Id, f => userId++)
             .RuleFor(p => p.RandomId, f => f.Random.Number(1,1000))
             .RuleFor(p => p.Gender, f => f.PickRandom<Gender>().ToString())
@@ -31,7 +32,7 @@ namespace FrankenPeople
             .RuleFor(p => p.DOB, f => f.Date.Past(18))
         ;
 
-        public static Faker<Person> FakeData => fakeData;
+        public static Faker<__Person> FakeData => fakeData;
 
     }
 }

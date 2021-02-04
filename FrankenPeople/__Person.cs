@@ -4,7 +4,7 @@ namespace FrankenPeople
 {
 
 
-    public class Person
+    public class __Person
     {
         public int Id { get; set; }
         public int RandomId { get; set; }

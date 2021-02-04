@@ -222,9 +222,6 @@ namespace FrankenPeople
 
 
 
-        /* 
-         * Need to figure out how to use the "type" elements
-         */
         static private List<string> testObject = new List<string>(
             new string[] { "On", "the", "other", "hand", "we", "denounce", "with", "righteous", "indignation", "and", "dislike", "men", "who", "are", "so", "beguiled" });
 
@@ -251,17 +248,9 @@ namespace FrankenPeople
             .RuleFor(p => p.String2, f => f.Random.String2(5))
             .RuleFor(p => p.Hash, f => f.Random.Hash())
             .RuleFor(p => p.Bool, f => f.Random.Bool())
-            //.RuleFor(p => p.ArrayElement, f => f.Random.ArrayElement(testArray)) 
-            //.RuleFor(p => p.ArrayElements, f => f.Random.ArrayElementsType())
-            //.RuleFor(p => p.ListItemType, f => f.Random.ListItemType())
-            //.RuleFor(p => p.ListItemsType, f => f.Random.ListItemsType())
-            //.RuleFor(p => p.CollectionItemType, f => f.Random.CollectionItemType())
             .RuleFor(p => p.ReplaceNumbers, f => f.Random.ReplaceNumbers("###", '#'))
-            //.RuleFor(p => p.ReplaceSymbols, f => f.Random.ReplaceSymbols("###", '$', _ => ))
             .RuleFor(p => p.Replace, f => f.Random.Replace("###"))
             .RuleFor(p => p.ClampString, f => f.Random.ClampString("abcdefg", 1, 5))
-            //.RuleFor(p => p.EnumType, f => f.Random.EnumType())
-            //.RuleFor(p => p.Shuffled, f => f.Random.Shuffle(testObject).Take(16).ToArray()
             .RuleFor(p => p.Word, f => f.Random.Word())
             .RuleFor(p => p.Words, f => f.Random.Words())
             .RuleFor(p => p.WordsArray, f => f.Random.WordsArray(5))

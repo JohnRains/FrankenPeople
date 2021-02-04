@@ -29,20 +29,19 @@ namespace FrankenPeople
 
             Console.WriteLine(" *** Random Addendum -- Not Implemented by Rules *** ");
             r.ArrayElement = f.Random.ArrayElement(testArray).ToString();
-            Console.WriteLine(JsonConvert.SerializeObject(r.ArrayElement, Newtonsoft.Json.Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(r.ArrayElement, Formatting.Indented));
             r.ArrayElements = f.Random.ArrayElements(testArray).ToArray();
-            Console.WriteLine(JsonConvert.SerializeObject(r.ArrayElements, Newtonsoft.Json.Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(r.ArrayElements, Formatting.Indented));
             r.ListItem = f.Random.ListItem(testList).ToString();
-            Console.WriteLine(JsonConvert.SerializeObject(r.ListItem, Newtonsoft.Json.Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(r.ListItem, Formatting.Indented));
             r.ListItems = f.Random.ListItems(testList).ToArray();
-            Console.WriteLine(JsonConvert.SerializeObject(r.ListItems, Newtonsoft.Json.Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(r.ListItems, Formatting.Indented));
             r.CollectionItem = f.Random.CollectionItem(testList).ToString();
-            Console.WriteLine(JsonConvert.SerializeObject(r.CollectionItem, Newtonsoft.Json.Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(r.CollectionItem, Formatting.Indented));
             r.ReplaceSymbols = f.Random.ReplaceSymbols(testSymbols, '$', Replace);
-            Console.WriteLine(JsonConvert.SerializeObject(r.ReplaceSymbols, Newtonsoft.Json.Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(r.ReplaceSymbols, Formatting.Indented));
             r.Shuffled = f.Random.Shuffle(testList).ToList();
-            Console.WriteLine(JsonConvert.SerializeObject(r.Shuffled, Newtonsoft.Json.Formatting.Indented));
-
+            Console.WriteLine(JsonConvert.SerializeObject(r.Shuffled, Formatting.Indented));
         }
 
     }
